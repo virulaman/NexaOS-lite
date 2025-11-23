@@ -1,0 +1,41 @@
+#
+# NexaCloud Kernel Configuration (server_defconfig)
+#
+# Base configuration for a secure, 64-bit, headless server.
+#
+
+# --- General Setup ---
+CONFIG_64BIT=y
+CONFIG_KERNEL_LZO=y
+CONFIG_IKCONFIG=y
+CONFIG_IKCONFIG_PROC=y
+
+# --- Disable Desktop/Workstation Features ---
+CONFIG_SOUND=n
+CONFIG_PRINTK_TIME=y
+CONFIG_CMDLINE_BOOL=y
+CONFIG_CMDLINE="quiet"
+
+# --- Networking ---
+CONFIG_NET=y
+CONFIG_INET=y
+CONFIG_TCP_CONG_CUBIC=y
+CONFIG_IPV6=y
+CONFIG_NETFILTER=y
+
+# --- Filesystems ---
+CONFIG_EXT4_FS=y
+CONFIG_XFS_FS=y
+CONFIG_PROC_FS=y
+CONFIG_TMPFS=y
+
+# --- Security Options (placeholders, to be expanded) ---
+# CONFIG_SECURITY=y
+# CONFIG_SECURITYFS=y
+# CONFIG_DEFAULT_SECURITY_APPARMOR=y (or SELINUX)
+
+# --- Virtualization (for running in a VM) ---
+CONFIG_VIRTIO_NET=y
+CONFIG_VIRTIO_BLK=y
+CONFIG_HYPERV=y
+CONFIG_KVM_GUEST=y
